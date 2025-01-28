@@ -97,12 +97,12 @@ It iteratively computes the root of the function using the bisection method and 
 #### **Inputs and Outputs**
 
 #### **Inputs**
-1. **`fcn`**: A Python callable (function) that represents \( f(x) \).
+1. **`fcn`**: A Python callable (function) that represents $f(x)$.
 2. **`a`**: The lower bound of the interval.
-3. **`b`**: The upper bound of the interval. Must satisfy \( f(a) \times f(b) < 0 \) (i.e., the root lies between \( a \) and \( b \)).
-4. **`tol_input`**: (Optional) The tolerance for the interval size. Default is \( 10^{-9} \).
-5. **`tol_output`**: (Optional) The tolerance for the function output. Default is \( 10^{-30} \).
-6. **`max_num_iter`**: (Optional) The maximum number of iterations to perform. Default is 1000.
+3. **`b`**: The upper bound of the interval. Must satisfy $f(a) \times f(b) < 0$ (i.e., the root lies between $a$ and $b$.
+4. **`tol_input`**: (Optional) The tolerance for the interval size. Default is $10^{-9}$.
+5. **`tol_output`**: (Optional) The tolerance for the function output. Default is $10^{-30}$.
+6. **`max_num_iter`**: (Optional) The maximum number of iterations to perform. Default is $1000$.
 
 #### **Outputs**
 The function returns a dictionary with the following keys:
