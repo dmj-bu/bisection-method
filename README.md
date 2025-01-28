@@ -115,11 +115,9 @@ The function returns a dictionary with the following keys:
 
 ---
 
-### **Example: Demonstrating Error Handling in the Bisection Method**
+### **Summary of Errors and Their Causes**
 
 The `run_bisection_method` function includes several checks to ensure valid input and proper conditions for the bisection method. 
-
-### **Summary of Errors and Their Causes**
 
 | **Error Message**                                                                 | **Cause**                                                                                  | **Solution**                                                                                  |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
