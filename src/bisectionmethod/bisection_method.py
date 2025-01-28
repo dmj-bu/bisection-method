@@ -141,6 +141,7 @@ def plot_bisection_results(result: dict, fig_name_with_path: Path):
     a_values = result["all_a"]
     b_values = result["all_b"]
     num_iter = result["num_iter"]
+    final_root = result["solution"]
 
     # Compute midpoint values for visualization
     midpoints = [(a + b) / 2.0 for a, b in zip(a_values, b_values)]
@@ -153,6 +154,7 @@ def plot_bisection_results(result: dict, fig_name_with_path: Path):
     axs[0].plot(range(1, num_iter + 1), a_values, marker="o", color="red", label="a values", linestyle="--")
     axs[0].plot(range(1, num_iter + 1), b_values, marker="s", color="blue", label="b values", linestyle="--")
     axs[0].plot(range(1, num_iter + 1), midpoints, marker=".", color="cyan", label="Midpoints", linestyle="-")
+    axs[0].scatter([num_iter], [final_root], color="yellow", label="Root: %0.6f" % (final_root), s=200, edgecolors="black")
     axs[0].set_xlabel("Iteration")
     axs[0].set_ylabel("Value")
     axs[0].set_title("Convergence of a, b, and Midpoints")
