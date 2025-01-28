@@ -108,10 +108,10 @@ It iteratively computes the root of the function using the bisection method and 
 The function returns a dictionary with the following keys:
 - **`solution`**: The computed root.
 - **`num_iter`**: The number of iterations performed.
-- **`all_a`**: A list of all the intermediate \( a \) values.
-- **`all_fcn_a`**: A list of function values corresponding to \( a \).
-- **`all_b`**: A list of all the intermediate \( b \) values.
-- **`all_fcn_b`**: A list of function values corresponding to \( b \).
+- **`all_a`**: A list of all the intermediate $a$ values.
+- **`all_fcn_a`**: A list of function values corresponding to $a$.
+- **`all_b`**: A list of all the intermediate $b$ values.
+- **`all_fcn_b`**: A list of function values corresponding to $b$.
 
 ---
 
