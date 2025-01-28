@@ -115,6 +115,23 @@ The function returns a dictionary with the following keys:
 
 ---
 
+### **Example: Demonstrating Error Handling in the Bisection Method**
+
+The `run_bisection_method` function includes several checks to ensure valid input and proper conditions for the bisection method. 
+
+### **Summary of Errors and Their Causes**
+
+| **Error Message**                                                                 | **Cause**                                                                                  | **Solution**                                                                                  |
+|-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| `Invalid input: {a} is greater than {b}.`                                         | $a \geq b$, invalid interval.                                                         | Ensure $a < b$.                                                                           |
+| `a and b are not guaranteed to contain a root of the continuous function provided` | $f(a)$ and $f(b)$ have the same sign, root not guaranteed in the interval.        | Choose bounds where $f(a) \times f(b) < 0$.                                               |
+| `Maximum number of iterations ({max_iter}) reached without convergence`           | Root not found within the specified maximum number of iterations.                         | Increase the `max_num_iter` parameter or check the function for potential issues.             |
+| `The function evaluations must have one positive and one negative value.`         | The function is discontinuous, or bounds do not guarantee a root.                        | Ensure the function is continuous and the root lies between $a$ and $b$.              |
+
+By handling these errors carefully, you can debug and ensure proper usage of the bisection method for finding roots in a wide variety of scenarios.
+
+---
+
 #### **Examples**
 
 After following the installation instructions above, it will be possible to run the tutorial examples contained in the `tutorials` folder.
