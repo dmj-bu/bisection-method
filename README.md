@@ -1,10 +1,14 @@
 # Bisection Method
 
+---
+
 ### Table of Contents
 * [Bisection method algorithm](#algo)
 * [Conda environemnt, installation, and testing](#install)
 * [Tutorial](#tutorial)
 * [More Information](#more)
+
+---
 
 ### Bisection Method Algorithm <a name="algo"></a>
 
@@ -32,6 +36,8 @@ The **Bisection Method** is a numerical technique to find roots of a continuous 
 3. **Limited Precision**: The method converges linearly, which may not be efficient for high-precision requirements.
 4. **Not Suitable for Multiple Roots**: The method may fail or behave inconsistently if the function has multiple roots within the interval.
 5. **Function Continuity Required**: It assumes $f(x)$ is continuous in $[a, b]$, and any discontinuities can cause issues.
+
+---
 
 ### Conda environment, install, and testing <a name="install"></a>
 
@@ -73,6 +79,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 If you are using VSCode to run this code, don't forget to set VSCode virtual environment to bisection-method-env.
 
+---
+
 ### Tutorial <a name="tutorial"></a>
 
 #### **What Does the Function Do?**
@@ -110,6 +118,8 @@ The function returns a dictionary with the following keys:
 #### **Examples**
 
 After following the installation instructions above, it will be possible to run the tutorial examples contained in the `tutorials` folder.
+
+---
 
 ### More information <a name="more"></a>
 More information can be found here:
