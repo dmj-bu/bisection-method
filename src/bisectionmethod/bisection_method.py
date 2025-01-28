@@ -1,4 +1,6 @@
+import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
 from typing import Callable, Union
 
 
@@ -125,3 +127,97 @@ def run_bisection_method(fcn: Callable, a: float, b: float, tol_input: float = 1
               "all_fcn_b": fcn_b_list}
     return result
 
+
+def plot_bisection_results(result: dict, fig_name_with_path: Path):
+    """
+    Plots the results of the bisection method.
+    
+    Parameters:
+        result (dict): Output dictionary from the `run_bisection_method` function, containing:
+            - "all_a": List of all intermediate a values
+            - "all_b": List of all intermediate b values
+            - "num_iter": Number of iterations
+    """
+    a_values = result["all_a"]
+    b_values = result["all_b"]
+    num_iter = result["num_iter"]
+
+    # Compute midpoint values for visualization
+    midpoints = [(a + b) / 2.0 for a, b in zip(a_values, b_values)]
+    
+    # Compute interval sizes
+    interval_sizes = [b - a for a, b in zip(a_values, b_values)]
+    
+    # Plot a and b values over iterations
+    fig, axs = plt.subplots(1, 2, figsize=(9, 4))
+    axs[0].plot(range(1, num_iter + 1), a_values, marker="o", color="red", label="a values", linestyle="--")
+    axs[0].plot(range(1, num_iter + 1), b_values, marker="s", color="blue", label="b values", linestyle="--")
+    axs[0].plot(range(1, num_iter + 1), midpoints, marker=".", color="cyan", label="Midpoints", linestyle="-")
+    axs[0].set_xlabel("Iteration")
+    axs[0].set_ylabel("Value")
+    axs[0].set_title("Convergence of a, b, and Midpoints")
+    axs[0].legend()
+    axs[0].grid(True)
+    
+    # Plot interval sizes over iterations
+    axs[1].plot(range(1, num_iter + 1), interval_sizes, marker="o", color="black", linestyle="-")
+    axs[1].set_yscale("log")
+    axs[1].set_xlabel("Iteration")
+    axs[1].set_ylabel("Interval Size (log scale)")
+    axs[1].set_title("Convergence of Interval Size")
+    axs[1].grid(True)
+
+    plt.tight_layout()
+    plt.savefig(fig_name_with_path)
+    return
+
+
+def plot_function_with_inset(fcn, result: dict, fig_name_with_path: Path):
+    """
+    Plots the original function and visualizes the evolution of `a` and `b` 
+    with an inset plot zoomed in around the root.
+
+    Parameters:
+        fcn (callable): The function being solved using the bisection method.
+        a_values (list): List of `a` values from the iterations.
+        b_values (list): List of `b` values from the iterations.
+        result (dict): Output dictionary from `run_bisection_method` containing:
+            - "solution": The computed root.
+    """
+    # Extract the root and define a range around it for better visualization
+    root = result["solution"]
+    a_values = result["all_a"]
+    b_values = result["all_b"]
+    x_range = np.linspace(min(a_values) - 1, max(b_values) + 1, 1000)
+    y_values = [fcn(x) for x in x_range]
+    
+    # Main plot: Original function
+    plt.figure(figsize=(6, 4))
+    plt.plot(x_range, y_values, label="f(x)", color="black")
+    plt.axhline(0, color="black", linestyle="--", linewidth=0.8)  # Horizontal line at y=0
+    plt.scatter(a_values, [fcn(a) for a in a_values], marker="o", color="red", label="a values", zorder=5)
+    plt.scatter(b_values, [fcn(b) for b in b_values], marker="s", color="blue", label="b values", zorder=5)
+    plt.scatter([root], [fcn(root)], color="yellow", label="Root", zorder=10, s=100, edgecolors="black")
+    plt.xlabel("x")
+    plt.ylabel("f(x)")
+    plt.title("Function Plot with Iterations of a and b")
+    plt.legend()
+    plt.grid(True)
+    
+    # Inset plot: Zoomed-in view around the root
+    ax_inset = plt.gca().inset_axes([0.6, 0.6, 0.3, 0.3])  # Define inset position and size
+    zoom_range = np.linspace(root - 0.5, root + 0.5, 500)
+    zoom_y_values = [fcn(x) for x in zoom_range]
+    ax_inset.plot(zoom_range, zoom_y_values, color="black")
+    ax_inset.scatter(a_values, [fcn(a) for a in a_values], marker="o", color="red", s=10)
+    ax_inset.scatter(b_values, [fcn(b) for b in b_values], marker="s", color="blue", s=10)
+    ax_inset.scatter([root], [fcn(root)], color="yellow", s=50, edgecolors="black")
+    ax_inset.axhline(0, color="black", linestyle="--", linewidth=0.8)
+    ax_inset.set_xlim(root - 0.1, root + 0.1)
+    ax_inset.set_ylim(-0.1, 0.1)
+    ax_inset.set_title("Zoomed-in View of Root")
+    ax_inset.grid(True)
+    
+    plt.tight_layout()
+    plt.savefig(fig_name_with_path)
+    return

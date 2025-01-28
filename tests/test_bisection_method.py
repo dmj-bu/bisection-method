@@ -1,6 +1,7 @@
 from bisectionmethod import bisection_method as bim
-import pytest
 import numpy as np
+from pathlib import Path
+import pytest
 import re
 
 
@@ -202,3 +203,23 @@ def test_run_bisection_method():
     max_num_iter = 10
     with pytest.raises(ValueError, match=re.escape(f"Maximum number of iterations ({max_num_iter}) reached without convergence")):
         bim.run_bisection_method(fcn_2, 0.0, 20.0, tol_input, tol_output, max_num_iter)
+
+
+def test_plot_function_with_inset():
+    result = bim.run_bisection_method(fcn, 0.0, 10.0, 10 ** -10, 10 ** -20)
+    self_path_file = Path(__file__)
+    self_path = self_path_file.resolve().parent
+    data_path = self_path.joinpath("files").resolve()
+    fig_name_with_path = data_path.joinpath("test_plot_funciton_with_inset.png").resolve()
+    bim.plot_function_with_inset(fcn, result, fig_name_with_path)
+    assert fig_name_with_path.is_file()
+
+
+def test_plot_bisection_results():
+    result = bim.run_bisection_method(fcn, 0.0, 10.0, 10 ** -10, 10 ** -20)
+    self_path_file = Path(__file__)
+    self_path = self_path_file.resolve().parent
+    data_path = self_path.joinpath("files").resolve()
+    fig_name_with_path = data_path.joinpath("test_plot_bisection_results.png").resolve()
+    bim.plot_bisection_results(result, fig_name_with_path)
+    assert fig_name_with_path.is_file()
