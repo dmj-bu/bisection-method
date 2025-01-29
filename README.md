@@ -1,5 +1,8 @@
 # Bisection Method
 
+[![python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/sandialabs/sibl#license)
+
 ---
 
 ### Table of Contents
