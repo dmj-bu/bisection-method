@@ -9,10 +9,17 @@
 ---
 
 ### Table of Contents
+* [Getting Started](#gs)
 * [Bisection method algorithm](#algo)
 * [Conda environemnt, installation, and testing](#install)
 * [Tutorial](#tutorial)
 * [More Information](#more)
+
+---
+
+### Getting Started
+
+To be written
 
 ---
 
