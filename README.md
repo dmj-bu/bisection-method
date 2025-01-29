@@ -4,7 +4,8 @@
 ![os](https://img.shields.io/badge/os-ubuntu%20|%20macos%20|%20windows-blue.svg)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/sandialabs/sibl#license)
 
-[![tests](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/workflows/tests/badge.svg)](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/actions) [![codecov](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method/graph/badge.svg?token=4KGN3VRWZ4)](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method)
+[![codecov](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method/graph/badge.svg?token=p5DMvJ6byO)](https://codecov.io/gh/Lejeune-Lab-Graduate-Course-Materials/bisection-method)
++ [![cov](https://Lejeune-Lab-Graduate-Course-Materials.github.io/bisection-method/badges/coverage.svg)](https://github.com/Lejeune-Lab-Graduate-Course-Materials/bisection-method/actions)
 ---
 
 ### Table of Contents
