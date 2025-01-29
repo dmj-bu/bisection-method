@@ -12,7 +12,7 @@ on:
 jobs:
   build:
     strategy:
-      max-parallel: 2
+      max-parallel: 3
       matrix:
         platform: [macos-latest, ubuntu-latest, windows-latest]
         # platform: [macos-latest]
@@ -51,7 +51,7 @@ jobs:
       uses: codecov/codecov-action@v4
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-        version: "v0.1.15"
+        # version: "v0.1.15"
         # files: ./coverage1.xml,./coverage2.xml # optional
         files: ./coverage.xml
         flags: unittests # optional
