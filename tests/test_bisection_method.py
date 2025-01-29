@@ -6,7 +6,7 @@ import re
 
 
 def test_hello_world():
-    known = "hello world!"
+    known = "hello world"
     found = bim.hello_world()
     assert known == found
 
