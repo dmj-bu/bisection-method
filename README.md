@@ -15,7 +15,7 @@
 
 ### Bisection Method Algorithm <a name="algo"></a>
 
-The **Bisection Method** is a numerical technique to find roots of a continuous function \( f(x) \). The method works by repeatedly dividing an interval \([a, b]\) in half and selecting the subinterval in which the root lies. The algorithm for the Bisection Method is as follows:
+The **Bisection Method** is a numerical technique to find roots of a continuous function f(x). The method works by repeatedly dividing an interval [a, b] in half and selecting the subinterval in which the root lies. The algorithm for the Bisection Method is as follows:
 
 1. **Choose an interval $[a, b]$**:
    - choose $[a, b]$ such that $f(a) \cdot f(b) < 0$, which means the function has a root in the interval.
