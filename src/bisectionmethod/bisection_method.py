@@ -5,7 +5,7 @@ from typing import Callable, Union
 
 
 def hello_world():
-    return "hello world!"
+    return "hello world"
 
 
 def midpoint(a: float, b: float) -> float:
