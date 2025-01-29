@@ -61,7 +61,7 @@ Ensure that pip is using the most up to date version of setuptools:
 ```bash
 pip install --upgrade pip setuptools wheel
 ```
-Create an editable install of the bisection method code:
+Create an editable install of the bisection method code (note: you must be in the correct directory):
 ```bash
 pip install -e .
 ```
