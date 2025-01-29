@@ -99,8 +99,8 @@ jupyter notebook tutorial.ipynb
 #### **What Does the Function Do?**
 
 The `run_bisection_method` function takes:
-- A continuous function \( f(x) \),
-- Two bounds \( a \) and \( b \) where \( f(a) \) and \( f(b) \) have opposite signs, and
+- A continuous function $f(x)$,
+- Two bounds $a$ and $b$ where $f(a)$ and $f(b)$ have opposite signs, and
 - A tolerance and a maximum number of iterations.
 
 It iteratively computes the root of the function using the bisection method and returns the root along with detailed iteration data.
