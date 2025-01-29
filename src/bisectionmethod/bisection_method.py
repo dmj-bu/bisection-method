@@ -110,6 +110,10 @@ def run_bisection_method(fcn: Callable, a: float, b: float, tol_input: float = 1
     b_list = []
     fcn_a_list = []
     fcn_b_list = []
+    a_list.append(a)
+    b_list.append(b)
+    fcn_a_list.append(fcn_a)
+    fcn_b_list.append(fcn_b)
     while root_found(a, b, fcn_a, fcn_b, tol_input, tol_output) is False:
         check_max_iter(num_iter, max_num_iter)
         num_iter += 1
@@ -151,9 +155,9 @@ def plot_bisection_results(result: dict, fig_name_with_path: Path):
     
     # Plot a and b values over iterations
     fig, axs = plt.subplots(1, 2, figsize=(9, 4))
-    axs[0].plot(range(1, num_iter + 1), a_values, marker="o", color="red", label="a values", linestyle="--")
-    axs[0].plot(range(1, num_iter + 1), b_values, marker="s", color="blue", label="b values", linestyle="--")
-    axs[0].plot(range(1, num_iter + 1), midpoints, marker=".", color="cyan", label="Midpoints", linestyle="-")
+    axs[0].plot(range(0, num_iter + 1), a_values, marker="o", color="red", label="a values", linestyle="--")
+    axs[0].plot(range(0, num_iter + 1), b_values, marker="s", color="blue", label="b values", linestyle="--")
+    axs[0].plot(range(0, num_iter + 1), midpoints, marker=".", color="cyan", label="Midpoints", linestyle="-")
     axs[0].scatter([num_iter], [final_root], color="yellow", label="Root: %0.6f" % (final_root), s=200, edgecolors="black")
     axs[0].set_xlabel("Iteration")
     axs[0].set_ylabel("Value")
@@ -162,7 +166,7 @@ def plot_bisection_results(result: dict, fig_name_with_path: Path):
     axs[0].grid(True)
     
     # Plot interval sizes over iterations
-    axs[1].plot(range(1, num_iter + 1), interval_sizes, marker="o", color="black", linestyle="-")
+    axs[1].plot(range(0, num_iter + 1), interval_sizes, marker="o", color="black", linestyle="-")
     axs[1].set_yscale("log")
     axs[1].set_xlabel("Iteration")
     axs[1].set_ylabel("Interval Size (log scale)")

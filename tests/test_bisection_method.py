@@ -181,10 +181,10 @@ def test_run_bisection_method():
     # examples that do converge
     result = bim.run_bisection_method(fcn, 0.0, 10.0, 10 ** -10, 10 ** -20)
     assert np.isclose(result["solution"], np.sqrt(2))
-    assert len(result["all_a"]) == result["num_iter"]
-    assert len(result["all_fcn_a"]) == result["num_iter"]
-    assert len(result["all_b"]) == result["num_iter"]
-    assert len(result["all_fcn_b"]) == result["num_iter"]
+    assert len(result["all_a"]) == result["num_iter"] + 1
+    assert len(result["all_fcn_a"]) == result["num_iter"] + 1
+    assert len(result["all_b"]) == result["num_iter"] + 1
+    assert len(result["all_fcn_b"]) == result["num_iter"] + 1
     tol_input = 10 ** -10
     tol_output = 10 ** -30
     result = bim.run_bisection_method(fcn_2, 0.0, 20.0, tol_input, tol_output)
