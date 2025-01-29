@@ -85,8 +85,12 @@ If you are using VSCode to run this code, don't forget to set VSCode virtual env
 If you would like the open `tutorial.ipynb` located in the `tutorials` folder as a Jupyter notebook in the browser, you might need to install Jupyter notebook in your conda environment as well:
 ```bash
 pip install jupyter
+```
+```bash
 cd tutorials/
-jupyter tutorial.ipynb
+```
+```bash
+jupyter notebook tutorial.ipynb
 ```
 ---
 
