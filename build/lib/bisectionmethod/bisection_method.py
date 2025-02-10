@@ -227,4 +227,3 @@ def plot_function_with_inset(fcn, result: dict, fig_name_with_path: Path):
     plt.tight_layout()
     plt.savefig(fig_name_with_path)
     return
-

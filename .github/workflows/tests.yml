@@ -32,9 +32,9 @@ jobs:
       - name: Install test dependencies
         run: pip install pytest pytest-cov
 
-      - name: Run tests with coverage
-        run: pytest --cov=bisectionmethod --cov-report=xml
-        # Replace 'my_package' with your actual package name
+      -- name: Run Tests and Generate Coverage Report
+        run: pytest tests/ --cov=. --cov-report=xml
+
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4

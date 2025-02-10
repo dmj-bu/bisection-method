@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/bisectionmethod/bisection_method.py
+src/bisectionmethod.egg-info/PKG-INFO
+src/bisectionmethod.egg-info/SOURCES.txt
+src/bisectionmethod.egg-info/dependency_links.txt
+src/bisectionmethod.egg-info/requires.txt
+src/bisectionmethod.egg-info/top_level.txt
+tests/test_bisection_method.py
